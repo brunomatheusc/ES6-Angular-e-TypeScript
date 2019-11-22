@@ -3,5 +3,5 @@ ports:
     onOpen: open-preview
 tasks:
   - before: cd app1
-    init: npm install -g @angular/cli
-    command: ng serve
+    init: ng serve
+    command: npm install -g @angular/cli
