@@ -1,0 +1,7 @@
+ports:
+  - port: 3000
+    onOpen: open-preview
+tasks:
+  - before: cd app1
+    init: npm install -g @angular/cli
+    command: ng serve
