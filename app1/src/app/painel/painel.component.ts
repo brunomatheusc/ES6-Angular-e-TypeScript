@@ -10,10 +10,15 @@ import { FRASES } from './frases-mock';
 export class PainelComponent implements OnInit {
   public frases: Array<Frase> = FRASES;
   public instrucao: string = 'Traduza a frase:';
+  public resposta: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  atualizaResposta(resposta: Event): void {
+    const text = (<HTMLInputElement>resposta.target).value;
+    this.resposta = text;
+  }
 }
