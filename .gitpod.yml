@@ -1,7 +1,7 @@
-ports:
-  - port: 3000
-    onOpen: open-preview
 tasks:
   - before: cd app1
-    command: npm install -g @angular/cli@latest
+    command: cd app1
+    command: npm install -g @angular/cli > /dev/null
+    command: npm install
+    command: npm install bootstrap
     command: ng serve
