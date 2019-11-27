@@ -16,9 +16,8 @@ export class TentativasComponent implements OnInit {
     new Coracao(true)
   ];
 
-  constructor() { console.log(this.coracoes); }
+  constructor() { }
 
   ngOnInit() {
   }
-
 }

@@ -16,6 +16,8 @@ export class PainelComponent implements OnInit {
   public rodadaFrase: Frase;
   public progresso: number = 0;
 
+  public tentativas: number = 3;
+
   constructor() { }
 
   ngOnInit() {
@@ -33,16 +35,21 @@ export class PainelComponent implements OnInit {
       this.rodada++;
       this.progresso += (100 / this.frases.length);
       
+      if (this.rodada >= this.frases.length){
+        alert('Você acertou todas as frases');
+        return;
+      } else {
+        this.atualizaRodada();
+      }
     } else {
       alert('A tradução está errada');
+      this.tentativas--;
+
+      if (this.tentativas == -1){
+        alert("Você perdeu todas as tentativas");
+      }
     }
     
-    if (this.rodada >= this.frases.length){
-      alert('Você acertou todas as frases');
-      return;
-    } else {
-      this.atualizaRodada();
-    }
   }
 
   atualizaRodada(){
