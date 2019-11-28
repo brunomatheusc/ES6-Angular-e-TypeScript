@@ -23,6 +23,10 @@ export class TentativasComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(){
+    if (this.tentativas !== this.coracoes.length){
+      this.coracoes[this.tentativas].cheio = false;
+    }
+
     console.log("Tentativas mudou: " + this.tentativas);
   }
 }
